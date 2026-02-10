@@ -1,0 +1,94 @@
+:root{
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#0f172a;
+  --accent-2:#0ea5a3;
+  --radius:12px;
+  --pad:18px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--accent);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:28px;
+}
+
+.container{
+  max-width:980px;
+  margin:0 auto;
+}
+
+header h1{margin:0;font-size:1.6rem}
+.subtitle{margin:6px 0 18px;color:var(--muted)}
+
+.calculator{
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:20px;
+  align-items:start;
+}
+
+/* inputs */
+.inputs{
+  background:var(--card);
+  padding:var(--pad);
+  border-radius:var(--radius);
+  box-shadow:0 6px 18px rgba(15,23,42,0.06);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.inputs label{
+  display:flex;
+  flex-direction:column;
+  font-size:0.95rem;
+  color:var(--muted);
+}
+.inputs input, .inputs select{
+  margin-top:8px;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #e6e9ef;
+  font-size:1rem;
+  outline:none;
+}
+.actions{display:flex;gap:10px;margin-top:6px}
+button{
+  background:var(--accent-2);
+  color:white;
+  border:0;padding:10px 14px;border-radius:10px;
+  cursor:pointer;font-weight:600;
+}
+button.muted{
+  background:transparent;color:var(--muted);border:1px solid #e7e9ef;
+}
+
+/* results */
+.results{
+  background:var(--card);
+  padding:var(--pad);
+  border-radius:var(--radius);
+  box-shadow:0 6px 18px rgba(15,23,42,0.06);
+}
+.results h2{margin:0 0 8px;font-size:1.05rem}
+.big-rate{
+  font-size:1.6rem;
+  font-weight:700;
+  margin:8px 0;
+}
+.breakdown{color:var(--muted);margin-bottom:10px;display:flex;flex-direction:column;gap:6px}
+.explanation{color:var(--muted);font-size:0.95rem}
+
+/* responsive */
+@media (max-width:880px){
+  .calculator{grid-template-columns:1fr; }
+}
+.small{color:var(--muted);font-size:0.85rem;margin-top:10px}

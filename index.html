@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Freelance Rate Calculator</title>
+  <meta name="description" content="Calculate the hourly rate freelancers should charge to hit income goals." />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0ea5a3">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="container">
+    <header>
+      <h1>Freelance Rate Calculator</h1>
+      <p class="subtitle">
+        Enter your goals and we’ll calculate a smart hourly rate.
+      </p>
+    </header>
+
+    <section class="calculator">
+      <form class="inputs" onsubmit="return false;">
+        <label>
+          Monthly income goal ($)
+          <input type="number" id="income" placeholder="3000">
+        </label>
+
+        <label>
+          Working days per month
+          <input type="number" id="days" placeholder="20">
+        </label>
+
+        <label>
+          Hours per day
+          <input type="number" id="hours" placeholder="6">
+        </label>
+
+        <label>
+          Monthly expenses ($)
+          <input type="number" id="expenses" placeholder="500">
+        </label>
+
+        <label>
+          Experience level
+          <select id="level">
+            <option value="1">Beginner</option>
+            <option value="1.2" selected>Intermediate</option>
+            <option value="1.5">Expert</option>
+          </select>
+        </label>
+
+        <div class="actions">
+          <button id="calculate">Calculate Rate</button>
+          <button id="reset" type="button" class="muted">Reset</button>
+        </div>
+      </form>
+
+      <aside class="results">
+        <h2>Your recommended rate</h
