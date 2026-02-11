@@ -1,155 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Free Freelance Hourly Rate Calculator 2026</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartFreelanceTools - Free Tools for Freelancers</title>
 
-  <meta name="description" content="Free freelance hourly rate calculator. Calculate your ideal freelance rate based on income goals and expenses.">
-  <meta name="keywords" content="freelance rate calculator, hourly rate calculator, freelance pricing tool">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f3f4f6;
-      display: flex;
-      justify-content: center;
-      padding: 40px;
-    }
+.container {
+  background: white;
+  padding: 30px;
+  width: 420px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
 
-    .container {
-      background: white;
-      padding: 30px;
-      width: 400px;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-    h1 {
-      margin-bottom: 10px;
-    }
+h2 {
+  margin-top: 30px;
+  font-size: 18px;
+}
 
-    p {
-      color: #555;
-      font-size: 14px;
-    }
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 14px;
+}
 
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-      font-size: 14px;
-    }
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
 
-    input, select {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
+button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background: #10b981;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    button {
-      margin-top: 20px;
-      width: 100%;
-      padding: 10px;
-      background: #10b981;
-      border: none;
-      color: white;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+button:hover {
+  background: #059669;
+}
 
-    button:hover {
-      background: #059669;
-    }
+.result-box {
+  margin-top: 15px;
+  padding: 10px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  font-weight: bold;
+}
 
-    .result-box {
-      margin-top: 20px;
-      padding: 15px;
-      background: #e5e7eb;
-      border-radius: 8px;
-    }
-
-    .money-link {
-      margin-top: 15px;
-      font-size: 13px;
-    }
-
-    .money-link a {
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-  </style>
+.section {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+</style>
 </head>
+
 <body>
 
 <div class="container">
 
-  <h1>Freelance Rate Calculator</h1>
-  <p>Enter your goals and calculate your smart hourly rate.</p>
+<h1>SmartFreelanceTools</h1>
 
-  <label>Monthly income goal ($)</label>
-  <input type="number" id="income" value="3000">
+<!-- RATE CALCULATOR -->
+<div>
+<h2>Freelance Hourly Rate Calculator</h2>
 
-  <label>Working days per month</label>
-  <input type="number" id="days" value="20">
+<label>Monthly income goal ($)</label>
+<input type="number" id="income" value="3000">
 
-  <label>Hours per day</label>
-  <input type="number" id="hours" value="6">
+<label>Working days per month</label>
+<input type="number" id="days" value="20">
 
-  <label>Monthly expenses ($)</label>
-  <input type="number" id="expenses" value="500">
+<label>Hours per day</label>
+<input type="number" id="hours" value="6">
 
-  <label>Experience level</label>
-  <select id="experience">
-    <option value="1">Beginner</option>
-    <option value="1.2" selected>Intermediate</option>
-    <option value="1.5">Expert</option>
-  </select>
+<label>Monthly expenses ($)</label>
+<input type="number" id="expenses" value="500">
 
-  <button type="button" onclick="calculateRate()">Calculate Rate</button>
+<label>Experience level</label>
+<select id="experience">
+<option value="1">Beginner</option>
+<option value="1.2" selected>Intermediate</option>
+<option value="1.5">Expert</option>
+</select>
 
-  <div class="result-box">
-    <h3>Your recommended rate</h3>
-    <p id="result">$0 / hour</p>
+<button type="button" onclick="calculateRate()">Calculate Rate</button>
 
-    <div class="money-link">
-      Want to increase your freelance income?
-      <a href="https://fiverr.com" target="_blank">
-        Get freelance help here
-      </a>
-    </div>
-  </div>
+<div class="result-box" id="rateResult">
+$0 / hour
+</div>
+</div>
+
+<!-- PROJECT CALCULATOR -->
+<div class="section">
+<h2>Project Price Calculator</h2>
+
+<label>Total hours needed</label>
+<input type="number" id="projectHours" value="40">
+
+<label>Your hourly rate ($)</label>
+<input type="number" id="projectRate" value="50">
+
+<button type="button" onclick="calculateProject()">Calculate Project Price</button>
+
+<div class="result-box" id="projectResult">
+$0
+</div>
+</div>
 
 </div>
 
 <script>
-  function calculateRate() {
-    const income = Number(document.getElementById("income").value);
-    const days = Number(document.getElementById("days").value);
-    const hours = Number(document.getElementById("hours").value);
-    const expenses = Number(document.getElementById("expenses").value);
-    const experience = Number(document.getElementById("experience").value);
+function calculateRate() {
+  const income = Number(document.getElementById("income").value);
+  const days = Number(document.getElementById("days").value);
+  const hours = Number(document.getElementById("hours").value);
+  const expenses = Number(document.getElementById("expenses").value);
+  const experience = Number(document.getElementById("experience").value);
 
-    const totalHours = days * hours;
+  const totalHours = days * hours;
 
-    if (totalHours === 0) {
-      alert("Days and hours must be greater than 0");
-      return;
-    }
-
-    const baseRate = (income + expenses) / totalHours;
-    const finalRate = baseRate * experience;
-
-    document.getElementById("result").textContent =
-      "$" + finalRate.toFixed(2) + " / hour";
+  if (totalHours <= 0) {
+    alert("Days and hours must be greater than 0");
+    return;
   }
+
+  const baseRate = (income + expenses) / totalHours;
+  const finalRate = baseRate * experience;
+
+  document.getElementById("rateResult").textContent =
+    "$" + finalRate.toFixed(2) + " / hour";
+}
+
+function calculateProject() {
+  const hours = Number(document.getElementById("projectHours").value);
+  const rate = Number(document.getElementById("projectRate").value);
+
+  if (hours <= 0 || rate <= 0) {
+    alert("Enter valid numbers");
+    return;
+  }
+
+  const total = hours * rate;
+
+  document.getElementById("projectResult").textContent =
+    "$" + total.toFixed(2);
+}
 </script>
 
 </body>
 </html>
-
